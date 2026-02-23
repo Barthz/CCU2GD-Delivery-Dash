@@ -31,6 +31,6 @@ public class Driver : MonoBehaviour
         transform.Translate(0, moveAmount, 0);
         transform.Rotate(0, 0, steerAmount );
 
-        Debug.Log("Move Speed: " + moveAmount + " Steer Amount: " + steerAmount);
+        //Debug.Log("Move Speed: " + moveAmount + " Steer Amount: " + steerAmount);
     }
 }
