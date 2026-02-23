@@ -1,0 +1,9 @@
+#Editor
+.vscode
+
+#Unity
+Library
+Logs
+Temp
+
+
