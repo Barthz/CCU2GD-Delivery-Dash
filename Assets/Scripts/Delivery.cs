@@ -6,14 +6,16 @@ public class Delivery : MonoBehaviour
     const string CUSTOMER_TAG = "Customer";
 
     private bool hasPackage;
+    [SerializeField] private float destroyDelay = 0.3f;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         // if the tag is package, then do something
-        if (collision.CompareTag(PACKAGE_TAG))
+        if (collision.CompareTag(PACKAGE_TAG) && !hasPackage)
         {
             Debug.Log("Package " + collision.gameObject.name + " collected!");
             hasPackage = true;
+            Destroy(collision.gameObject, destroyDelay);
         }
 
         if (collision.CompareTag(CUSTOMER_TAG) && hasPackage)
