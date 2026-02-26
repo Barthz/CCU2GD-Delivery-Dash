@@ -15,6 +15,7 @@ public class Delivery : MonoBehaviour
         {
             Debug.Log("Package " + collision.gameObject.name + " collected!");
             hasPackage = true;
+            GetComponent<ParticleSystem>().Play();
             Destroy(collision.gameObject, destroyDelay);
         }
 
@@ -22,6 +23,7 @@ public class Delivery : MonoBehaviour
         {
             Debug.Log("Package delivered to " + collision.gameObject.name + "!");
             hasPackage = false;
+            GetComponent<ParticleSystem>().Stop();
         }
     }
 }
