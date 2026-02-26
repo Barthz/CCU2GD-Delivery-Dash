@@ -24,6 +24,7 @@ public class Delivery : MonoBehaviour
             Debug.Log("Package delivered to " + collision.gameObject.name + "!");
             hasPackage = false;
             GetComponent<ParticleSystem>().Stop();
+            Destroy(collision.gameObject, destroyDelay);
         }
     }
 }
